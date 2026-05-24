@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tripsync-backend
+    env: java
+    rootDir: backend
+    buildCommand: ./mvnw clean package
+    startCommand: java -jar target/*.jar
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:5173
