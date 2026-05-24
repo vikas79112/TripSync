@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Premium Light Theme Variables */
+  --background: #f8fafc;          /* Soft neutral slate-50 */
+  --surface: #ffffff;             /* Crisp pure white */
+  --surface-elevated: #f1f5f9;    /* slate-100 */
+  --surface-hover: #e2e8f0;       /* slate-200 */
+  --text-primary: #0f172a;        /* slate-900 */
+  --text-secondary: #1e293b;      /* slate-800 */
+  --text-muted: #475569;          /* slate-600 */
+  --border-subtle: rgba(15, 23, 42, 0.08); /* Crisp subtle borders */
+  --accent: #059669;              /* Emerald-600 */
+  --accent-hover: #047857;        /* Emerald-700 */
+  --danger: #dc2626;              /* Red-600 */
+  --success: #059669;             /* Emerald-600 */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+:root.dark {
+  /* Premium Deep Navy Fintech Dark Theme Variables */
+  --background: #070b13;          /* Solid deep rich navy */
+  --surface: #0e1526;             /* Polished elevated card surface */
+  --surface-elevated: #162033;    /* Distinct input & nested card surfaces */
+  --surface-hover: #1e2942;       /* Slate interactive surface */
+  --text-primary: #f8fafc;        /* slate-50 */
+  --text-secondary: #cbd5e1;      /* slate-300 */
+  --text-muted: #64748b;          /* slate-500 */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --accent: #10b981;              /* Vibrant Emerald-500 */
+  --accent-hover: #34d399;        /* Emerald-400 */
+  --danger: #ef4444;              /* Red-500 */
+  --success: #10b981;             /* Emerald-500 */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+  --scrollbar-track: #070b13;
+  --scrollbar-thumb: #1e2942;
+}
+
+@theme {
+  /* Bind Tailwind v4 color scale to our CSS Custom Design System Variables */
+  --color-slate-950: var(--background);
+  --color-slate-900: var(--surface);
+  --color-slate-850: var(--surface-elevated);
+  --color-slate-800: var(--border-subtle);
+  --color-slate-700: var(--border-subtle);
+  --color-slate-600: var(--text-muted);
+  --color-slate-500: var(--text-muted);
+  --color-slate-400: var(--text-secondary);
+  --color-slate-300: var(--text-secondary);
+  --color-slate-200: var(--border-subtle);
+  --color-slate-100: var(--text-primary);
+  --color-white: var(--text-primary);
+  --color-emerald-500: var(--accent);
+  --color-emerald-600: var(--accent-hover);
+  --color-teal-500: var(--accent-hover);
+  
+  --font-sans: 'Outfit', 'Inter', 'system-ui', 'sans-serif';
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  @apply antialiased font-sans selection:bg-emerald-500 selection:text-slate-950;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Premium Card Panels */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  border-radius: 1.5rem;
+  transition: background 0.25s ease, border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-panel-heavy {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+  border-radius: 2rem;
+  transition: background 0.25s ease, border 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Inputs & Form Fields */
+.glass-input {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  @apply focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/25 outline-none rounded-xl placeholder-slate-500;
+}
+
+.glass-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Redesign Gradient Text */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400;
+}
+
+/* Button & Interaction States */
+.glow-btn {
+  background: var(--accent);
+  color: #070b13;
+  @apply font-bold rounded-xl active:scale-98 shadow-sm transition-all duration-200 cursor-pointer text-center;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.glow-btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+  transform: translateY(-0.5px);
+}
+
+.glow-btn:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+.glow-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}

@@ -1,0 +1,27 @@
+# TripSync - Root Git Ignore Rules
+
+# Backend exclusions
+backend/target/
+backend/*.log
+backend/logs/
+backend/.env
+backend/.env.local
+backend/db/
+backend/*.mv.db
+backend/*.trace.db
+
+# Frontend exclusions
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# System & IDE exclusions
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+bin/
+tmp/
