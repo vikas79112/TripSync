@@ -5,7 +5,7 @@ spring:
     name: tripsync
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 app:
   allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173}
@@ -21,9 +21,6 @@ logging:
     org.hibernate.SQL: INFO
 
 ---
-
-jwt:
-  secret: TripsyncSuperSecureJwtSecretKeyForDevelopment2026AndBeyond
 
 spring:
   config:
