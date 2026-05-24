@@ -1,10 +1,6 @@
 # TripSync — Collaborative Trip Expense Management Platform
 
 <p align="center">
-  <img src="Screenshot 2026-05-24 133316.png" alt="TripSync Dashboard" width="100%" />
-</p>
-
-<p align="center">
   <strong>A cloud-deployed full-stack expense management platform for collaborative group travel.</strong>
 </p>
 
@@ -57,7 +53,7 @@ The project focuses on real-world engineering challenges including:
 ## 🔐 Login Page
 
 <p align="center">
-  <img src="login.png" alt="Login Page" width="90%" />
+  <img src="./assets/login.png" alt="Login Page" width="90%" />
 </p>
 
 ---
@@ -65,7 +61,7 @@ The project focuses on real-world engineering challenges including:
 ## 📝 Register Page
 
 <p align="center">
-  <img src="register.png" alt="Register Page" width="90%" />
+  <img src="./assets/register.png" alt="Register Page" width="90%" />
 </p>
 
 ---
@@ -73,7 +69,7 @@ The project focuses on real-world engineering challenges including:
 ## ✈️ Trip Management
 
 <p align="center">
-  <img src="trip-management.png" alt="Trip Management" width="90%" />
+  <img src="./assets/trip-management.png" alt="Trip Management" width="90%" />
 </p>
 
 ---
